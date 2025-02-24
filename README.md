@@ -1,13 +1,13 @@
 <table width="100%">
 <tr>
-<td>
+<td width="70%">
 
 # PEMROGRAMAN WEB LANJUT | LARAVEL 10  
 Jiha Ramdhan / 14 / 2341720043 / TI-2A
 
 </td>
-<td valign="top" align="right">
-<img src="https://akuntansi.polinema.ac.id/wp-content/uploads/2024/02/logo_polinema.png" width="100">
+<td align="center">
+<img src="https://akuntansi.polinema.ac.id/wp-content/uploads/2024/02/logo_polinema.png" width="50%">
 </td>
 </tr>
 </table>
