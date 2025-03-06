@@ -9,34 +9,41 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index(){
-        // //tambah data user dengan Eloquent Model
+        // J4 : Praktikum 1
         // $data = [
-        //     'username' => 'customer-1',
-        //     'nama' => 'Pelanggan',
-        //     'password' => Hash::make('12345'),
-        //     'level_id' => 4
+        //     'level_id' => 2,
+        //     'username' => 'manager_tiga',
+        //     'nama' => 'Manager 3',
+        //     'password' => Hash::make('12345')
         // ];
-        // UserModel::insert($data); // tambah data ke tabel m_user
+        // UserModel::create($data);
 
-        // $data = [
-        //     'nama' => 'Pelanggan Pertama',
-        // ];
-        // UserModel::where('username','customer-1')->update($data); //update data user
-
-        // //coba akses model UserModel
-        // $user = UserModel::all(); // ambil semua data dari tabel m_user
+        // $user = UserModel::all();
         // return view('user',['data' => $user]);
 
-        $data = [
-            'level_id' => 2,
-            'username' => 'manager_tiga',
-            'nama' => 'Manager 3',
-            'password' => Hash::make('12345')
-        ];
-        UserModel::create($data);
+        // J4 : Praktikum 2.1 no 3
+        // $user = UserModel::find(1);
+        // return view('user',['data' => $user]);
 
-        $user = UserModel::all();
+        // J4 : Praktikum 2.1 no 5
+        // $user = UserModel::where('level_id', 1)->first();
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.1 no 7
+        // $user = UserModel::firstWhere('level_id', 1);
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.1 no 9
+        // $user = UserModel::findOr(1, ['username','nama'], function(){
+        //     abort(404);
+        // });
+        // return view('user',['data' => $user]);
+        
+        // J4 : Praktikum 2.1 no 11
+        $user = UserModel::findOr(20, ['username','nama'], function(){
+            abort(404);
+        });
         return view('user',['data' => $user]);
-
+        
     }
 }
