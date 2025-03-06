@@ -54,8 +54,65 @@ class UserController extends Controller
         // return view('user',['data' => $user]);
 
         // J4 : Praktikum 2.3 no 2
-        $user = UserModel::where('level_id', 2)->count();
-        //dd($user);
+        // $user = UserModel::where('level_id', 2)->count();
+        // //dd($user);
+        // return view('user',['data' => $user]);
+
+        // // J4 : Praktikum 2.4 no 3
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ],
+        // );
+
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.4 no 5
+        // $user = UserModel::firstOrCreate(
+        //     [
+        //         'username' => 'manager22',
+        //         'nama' => 'Manager Dua Dua',
+        //         'password' => Hash::make('12345'),
+        //         'level_id' => 2
+        //     ],
+        // );
+
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.4 no 7
+        // $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager',
+        //         'nama' => 'Manager',
+        //     ],
+        // );
+
+        // return view('user',['data' => $user]);
+        
+        // J4 : Praktikum 2.4 no 9
+        // $user = UserModel::firstOrNew(
+        //     [
+        //         'username' => 'manager33',
+        //         'nama' => 'Manager Tiga Tiga',
+        //         'password' => Hash::make('12345'),
+        //         'level_id' => 2
+        //     ],
+        // );
+
+        // return view('user',['data' => $user]);
+
+         // J4 : Praktikum 2.4 no 11
+         $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
+        );
+        $user->save();
+
         return view('user',['data' => $user]);
         
     }
