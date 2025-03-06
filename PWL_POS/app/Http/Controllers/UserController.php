@@ -50,7 +50,12 @@ class UserController extends Controller
         // return view('user',['data' => $user]);
         
         // J4 : Praktikum 2.2 no 4
-        $user = UserModel::where('username','manager9')->firstOrFail();
+        // $user = UserModel::where('username','manager9')->firstOrFail();
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.3 no 2
+        $user = UserModel::where('level_id', 2)->count();
+        //dd($user);
         return view('user',['data' => $user]);
         
     }
