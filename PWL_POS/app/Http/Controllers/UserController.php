@@ -40,9 +40,17 @@ class UserController extends Controller
         // return view('user',['data' => $user]);
         
         // J4 : Praktikum 2.1 no 11
-        $user = UserModel::findOr(20, ['username','nama'], function(){
-            abort(404);
-        });
+        // $user = UserModel::findOr(20, ['username','nama'], function(){
+        //     abort(404);
+        // });
+        // return view('user',['data' => $user]);
+
+        // J4 : Praktikum 2.2 no 2
+        // $user = UserModel::findOrFail(1);
+        // return view('user',['data' => $user]);
+        
+        // J4 : Praktikum 2.2 no 4
+        $user = UserModel::where('username','manager9')->firstOrFail();
         return view('user',['data' => $user]);
         
     }
