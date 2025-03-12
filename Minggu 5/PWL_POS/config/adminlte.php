@@ -309,6 +309,12 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        ['header' => 'Tugas Praktikum J5'],
+        [
+            'text' => 'Manage Kategori',
+            'url' => 'kategori',
+            'icon' => 'fas fa-fw fa-list',
+        ],
 
         // Sidebar items:
         [
