@@ -25,7 +25,8 @@ class KategoriDataTable extends DataTable
             ->addColumn('action', function ($kategori) {
                 $btn = '<div class="d-flex gap-2">';
                 $btn .= '<a href="/kategori/edit/' . $kategori->kategori_id . '" class="btn btn-sm btn-primary my-1 d-flex gap-1 align-items-center"><i class="bi bi-pencil-square"></i>Edit</a>';
-                $btn .= '<a href="/kategori/hapus/' . $kategori->kategori_id . '" class="btn btn-sm btn-danger my-1 d-flex gap-1 align-items-center"><i class="bi bi-trash3"></i>Hapus</a>';
+                $btn .= '<a href="/kategori/hapus/' . $kategori->kategori_id . '" class="btn btn-sm btn-danger my-1 d-flex gap-1 align-items-center" 
+                        onclick="return confirmDelete(' . $kategori->kategori_id . ')"><i class="bi bi-trash3"></i>Hapus</a>';
                 $btn .= '</div>';
                 return $btn;
             })

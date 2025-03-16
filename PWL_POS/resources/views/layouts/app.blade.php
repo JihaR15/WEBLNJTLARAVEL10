@@ -50,6 +50,11 @@
  
 @push('js') 
 <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script>
+function confirmDelete(id) {
+    return confirm("Apakah Anda yakin ingin menghapus data ini?");
+}
+</script>
 @endpush 
 
 @stack('scripts')
