@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\KategoriModel;
+use App\Models\LevelModel as Level;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class KategoriDataTable extends DataTable
+class LevelDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -22,20 +22,14 @@ class KategoriDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', function ($kategori) {
-                $btn = '<div class="d-flex gap-2">';
-                $btn .= '<a href="/kategori/edit/' . $kategori->kategori_id . '" class="btn btn-sm btn-primary my-1 d-flex gap-1 align-items-center"><i class="bi bi-pencil-square"></i>Edit</a>';
-                $btn .= '<a href="/kategori/hapus/' . $kategori->kategori_id . '" class="btn btn-sm btn-danger my-1 d-flex gap-1 align-items-center"><i class="bi bi-trash3"></i>Hapus</a>';
-                $btn .= '</div>';
-                return $btn;
-            })
+            ->addColumn('action', 'level.action')
             ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(KategoriModel $model): QueryBuilder
+    public function query(Level $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -46,10 +40,10 @@ class KategoriDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('kategori-table')
+                    ->setTableId('level-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    //->dom('Bfrtip') //aktifkan ini jika button excel,csv,pdf dll ingin muncul
+                    //->dom('Bfrtip')
                     ->orderBy(1)
                     ->selectStyleSingle()
                     ->buttons([
@@ -68,16 +62,16 @@ class KategoriDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('kategori_id'), 
-            Column::make('kategori_kode'), 
-            Column::make('kategori_nama'), 
+            Column::make('level_id'),
+            Column::make('level_kode'),
+            Column::make('level_nama'),
             Column::make('created_at'),
             Column::make('updated_at'),
-            Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
+            // Column::computed('action')
+            //       ->exportable(false)
+            //       ->printable(false)
+            //       ->width(60)
+            //       ->addClass('text-center'),
         ];
     }
 
@@ -86,6 +80,6 @@ class KategoriDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Kategori_' . date('YmdHis');
+        return 'Level_' . date('YmdHis');
     }
 }
