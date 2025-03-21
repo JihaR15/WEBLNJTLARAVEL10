@@ -82,7 +82,5 @@
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 </script>
 @stack('js')
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
 </body>
 </html>
