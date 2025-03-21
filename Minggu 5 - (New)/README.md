@@ -1,4 +1,4 @@
-# Praktikum PWL_POS - Laravel 10
+# Praktikum PWL_POS - J5 New Laravel 10
 ## Link PDF: 
 
 ## Praktikum 1 - Layouting AdminLTE
