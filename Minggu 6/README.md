@@ -59,6 +59,16 @@ Ketika data dirubah dan disimpan
 - `app/Http/Controllers/UserController.php`
 - `routes/web.php`
 
+- Hasil:<br>
+
+```cmd
+Tampilan Modal ketika meng-klik tombol delete
+```
+![deleteAjax](img/delete.png)
+```cmd
+Tampilan ketika mengklik "Ya, Hapus"
+```
+![DeleteSuccessAjax](img/deletesuccess.png)
 
 ## Tugas
 Implementasikan  Ajax Form dan Client Validation dengan 
