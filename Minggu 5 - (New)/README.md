@@ -75,3 +75,32 @@ Implementasikan layout dan DataTables untuk:
 - Tabel `m_kategori`
 - Tabel `m_supplier`
 - Tabel `m_barang`
+
+Jawab:
+- Tabel `m_level`
+![1](img/tugas/level/1.png)
+![2](img/tugas/level/2.png)
+![3](img/tugas/level/3.png)
+![4](img/tugas/level/4.png)
+![5](img/tugas/level/5.png)
+
+- Tabel `m_kategori`
+![1](img/tugas/kategori/1.png)
+![2](img/tugas/kategori/2.png)
+![3](img/tugas/kategori/3.png)
+![4](img/tugas/kategori/4.png)
+![5](img/tugas/kategori/5.png)
+
+- Tabel `m_supplier`
+![1](img/tugas/supplier/1.png)
+![2](img/tugas/supplier/2.png)
+![3](img/tugas/supplier/3.png)
+![4](img/tugas/supplier/4.png)
+![5](img/tugas/supplier/5.png)
+
+- Tabel `m_barang`
+![1](img/tugas/barang/1.png)
+![2](img/tugas/barang/2.png)
+![3](img/tugas/barang/3.png)
+![4](img/tugas/barang/4.png)
+![5](img/tugas/barang/5.png)
