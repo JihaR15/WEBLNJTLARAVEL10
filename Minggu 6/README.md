@@ -77,3 +77,76 @@ jQuery Validation untuk:
 - Tabel `m_kategori`
 - Tabel `m_supplier`
 - Tabel `m_barang`
+
+Jawab :
+## Tabel `m_level`
+```
+Tambah Ajax Level
+```
+![Tambah](img/tugas/level/1.png)
+```
+Detail Ajax Level
+```
+![Detail](img/tugas/level/2.png)
+```
+Edit Ajax Level
+```
+![Edit](img/tugas/level/3.png)
+```
+Hapus Ajax Level
+```
+![Hapus](img/tugas/level/4.png)
+
+## Tabel `m_kategori`
+```
+Tambah Ajax Kategori
+```
+![Tambah](img/tugas/kategori/1.png)
+```
+Detail Ajax Kategori
+```
+![Detail](img/tugas/kategori/2.png)
+```
+Edit Ajax Kategori
+```
+![Edit](img/tugas/kategori/3.png)
+```
+Hapus Ajax Kategori
+```
+![Hapus](img/tugas/kategori/4.png)
+
+## Tabel `m_supplier`
+```
+Tambah Ajax Supplier
+```
+![Tambah](img/tugas/supplier/1.png)
+```
+Detail Ajax Supplier
+```
+![Detail](img/tugas/supplier/2.png)
+```
+Edit Ajax Supplier
+```
+![Edit](img/tugas/supplier/3.png)
+```
+Hapus Ajax Supplier
+```
+![Hapus](img/tugas/supplier/4.png)
+
+## Tabel `m_barang`
+```
+Tambah Ajax Barang
+```
+![Tambah](img/tugas/barang/1.png)
+```
+Detail Ajax Barang
+```
+![Detail](img/tugas/barang/2.png)
+```
+Edit Ajax Barang
+```
+![Edit](img/tugas/barang/3.png)
+```
+Hapus Ajax Barang
+```
+![Hapus](img/tugas/barang/4.png)
