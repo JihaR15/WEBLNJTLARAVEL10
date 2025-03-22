@@ -39,6 +39,17 @@ Ketika sudah diisi dan klik simpan
 - `app/Http/Controllers/UserController.php`
 - `routes/web.php`
 
+- Hasil:<br>
+
+```cmd
+Tampilan Modal ketika meng-klik tombol edit
+```
+![EditAjax](img/editajax.png)
+```cmd
+Ketika data dirubah dan disimpan
+```
+![EditSuccessAjax](img/editsuccess.png)
+
 ### 3. Modal AJAX Hapus Data
 - Konfirmasi penghapusan data menggunakan modal AJAX.
 - Setelah konfirmasi, data akan dihapus menggunakan metode **DELETE**.
@@ -47,6 +58,7 @@ Ketika sudah diisi dan klik simpan
 - `resources/views/user/confirm_ajax.blade.php`
 - `app/Http/Controllers/UserController.php`
 - `routes/web.php`
+
 
 ## Tugas
 Implementasikan  Ajax Form dan Client Validation dengan 
