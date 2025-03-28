@@ -84,11 +84,17 @@ Hasil:<br>
 > Staff: (tidak memiliki akses ke level dan barang)
 ![gif](img/P3-3.gif)
 
-<!-- ### Tugas  3 – Implementasi Multi-Level Authorization :
+### Tugas  3 – Implementasi Multi-Level Authorization :
 1. Silahkan implementasikan multi-level authorization pada project kalian masing-masing (Sudah)
-2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan 
+2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan (laporannya merupakan readme ini)
     > Disini kita memodifikasi middleware agar bisa menerima banyak parameter level sekaligus, misalnya authorize:ADM,MAN. Fungsi ini memungkinkan route diakses oleh lebih dari satu level. Contohnya, menu laporan bisa dibuka oleh admin dan manajer. kita menambahkan pengecekan array level user, agar validasi lebih fleksibel dan sesuai kebutuhan aplikasi.
 3. Implementasikan multi-level authorization untuk semua Level/Jenis User dan Menu-menu yang sesuai dengan Level/Jenis User 
-3. Submit kode untuk impementasi Authorization pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS)) -->
+    1. Admin bisa mengakses semua
+    ![gif](img/T3-1.gif)
+    2. Manager sementara hanya bisa mengakses kategori dan data barang
+    ![gif](img/T3-2.gif)
+    3. Staff tidak bisa mengakses milik admin dan manager
+    ![gif](img/T3-3.gif)
+4. Submit kode untuk impementasi Authorization pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS))
 
 
