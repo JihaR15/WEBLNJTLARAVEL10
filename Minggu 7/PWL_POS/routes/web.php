@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\SupplierController;
@@ -7,6 +8,20 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+
+Route::pattern('id','[0-9]+'); //artinya ketika ada parameter {id}, maka harus berupa angka
+
+Route::get('login',[AuthController::class,'login'])->name('login');
+Route::post('login',[AuthController::class,'postlogin']);
+Route::get('logout',[AuthController::class,'logout'])->middleware('auth');
+
+Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam group ini harus login dulu
+
+   // masukkan semua route yang perlu autentikasi disini
+   Route::get('/', [WelcomeController::class,'index']);
+
+
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +37,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-Route::get('/', [WelcomeController::class,'index']);
 
 // Route::get('/level',[LevelController::class,'index']);
 // Route::get('/kategori',[KategoriController::class,'index']);
@@ -126,3 +139,4 @@ Route::group(['prefix' => 'supplier'], function(){
    Route::delete('/{id}/delete_ajax', [SupplierController::class, 'delete_ajax']); 
    Route::delete('/{id}', [SupplierController::class, 'destroy']);
 });
+
