@@ -1,6 +1,6 @@
 # PWL_POS J7 - Authentication dan Authorization di Laravel
 
-### Praktikum 1 – Implementasi Authentication : 
+## Praktikum 1 – Implementasi Authentication : 
 - Modifikasi file konfigurasi autentikasi di `config/auth.php` agar sesuai dengan model untuk tabel `m_user`.
 - Modifikasi `UserModel.php` agar mendukung proses autentikasi.
 - Pembuatan `AuthController.php` untuk memproses login dan logout.
@@ -30,7 +30,7 @@ Hasil:<br>
 3. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan (Sudah diatas)
 4. Submit kode untuk impementasi Authentication pada repository github kalian ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS)) 
 
-### Praktikum 2 – Implementasi Authorization di Laravel dengan Middleware :
+## Praktikum 2 – Implementasi Authorization di Laravel dengan Middleware :
 - Modifikasi `UserModel.php` dengan menambahkan properti/relasi yang mendukung pengecekan role/level.
 - Pembuatan middleware `AuthorizeUser.php` menggunakan perintah:
     ```bash
@@ -61,7 +61,7 @@ Hasil:<br>
 2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan (Sudah)
 3. Submit kode untuk impementasi Authorization pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS))
 
-### Praktikum 3 – Implementasi Multi-Level Authorizaton di Laravel dengan Middleware
+## Praktikum 3 – Implementasi Multi-Level Authorizaton di Laravel dengan Middleware
 - Modifikasi `UserModel.php` dengan menambahkan fungsi `getRole()` untuk mendapatkan kode level dari user.
 - Penyesuaian pada middleware `AuthorizeUser.php` agar mendukung pengecekan multi-level authorization.
 - Perbaikan dan pengaturan ulang route di `routes/web.php` agar dapat mengatur hak akses untuk beberapa level user secara dinamis.
@@ -97,4 +97,10 @@ Hasil:<br>
     ![gif](img/T3-3.gif)
 4. Submit kode untuk impementasi Authorization pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS))
 
+
+### Tugas 4 – Implementasi Form Registrasi :
+1. Silahkan implementasikan form untuk registrasi user. ([Sudah](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS))
+2. Screenshot hasil yang kalian kerjakan (Saya record)
+    ![gif](img/T4.gif)
+3. Commit dan push hasil tugas kalian ke masing-masing repo github kalian ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%207/PWL_POS))
 
