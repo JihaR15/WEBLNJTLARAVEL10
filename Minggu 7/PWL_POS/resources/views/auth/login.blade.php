@@ -25,7 +25,7 @@
                     class="h1"><b>Admin</b>LTE</a></div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="{{ url('auth/login') }}" method="POST" id="form-login">
+                <form action="{{ url('/login') }}" method="POST" id="form-login">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" id="username" name="username" class="form-control"
