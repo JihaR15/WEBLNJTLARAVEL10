@@ -90,26 +90,26 @@ Hasil:<br>
 
 ### Tugas 4 – Implementasi Upload File Gambar :
 1. Silahkan implementasikan fitur upload file untuk mengubah foto profile di project web kalian 
-    > berikut merupakan tampilan dari create, detail, edit, dan hapus setelah modifikasi
+    > berikut merupakan tampilan dari create, detail, edit, dan hapus setelah modifikasi <br>
     ![gif](img/T4.gif)
 2. Jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan
-    > 1. Membuat Migration untuk menambahkan kolom baru `picture_path` sebagai penyimpanan dari path foto profil di tabel `m_user`
+    > 1. Membuat Migration untuk menambahkan kolom baru `picture_path` sebagai penyimpanan dari path foto profil di tabel `m_user` <br>
     ![img](img/T4-1.png)
-    > 2. Menambahkan atribut baru pada `Fillable` di `UserModel.php` 
+    > 2. Menambahkan atribut baru pada `Fillable` di `UserModel.php` <br>
     ![img](img/T4-2.png)
     > 3. Modifikasi View user(create, edit, show, confirm) agar bisa menambahkan, mengedit dan menampilkan foto profile yang ingin/sudah di upload <br>
-        - Create 
+        - Create <br>
         ![img](img/T4-3a.png)
-        - Edit
+        - Edit <br>
         ![img](img/T4-3b_1.png)
         ![img](img/T4-3b_2.png)
-        - Show
+        - Show <br>
         ![img](img/T4-3c.png)
-        - Confirm
+        - Confirm <br>
         ![img](img/T4-3d.png)
-    > 4. Menambahkan Validasi untuk `profile_picture`
+    > 4. Menambahkan Validasi untuk `profile_picture` <br>
     ![img](img/T4-4.png)
-    > 5. Modifikasi `UserController.php` di `store_ajax` dan `update_ajax` agar bisa menyimpan/mengupdate gambar pada `storage/app/public/profile_pictures` dan menyimpan/mengupdate pathnya di `picture_path` pada tabel `m_user`
+    > 5. Modifikasi `UserController.php` di `store_ajax` dan `update_ajax` agar bisa menyimpan/mengupdate gambar pada `storage/app/public/profile_pictures` dan menyimpan/mengupdate pathnya di `picture_path` pada tabel `m_user` <br>
     ![img](img/T4-5.png)
 3. Submit kode untuk impementasi export pdf pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS))
 
