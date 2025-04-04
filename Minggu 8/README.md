@@ -33,22 +33,31 @@ Hasil:<br>
 3. Submit kode untuk impementasi prakktikum 1 pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS))
 
 ## Praktikum 2 – Export Data ke Excel :
-- 
+- Modifikasi `barang/index.blade.php`
+- Tambahkan route pada `route/web.php` untuk bisa memproses export excel
+- Tambahkan fungsi `export_excel()` pada file `BarangController.php`
+    1. Ambil data barang yang akan kita export ke excel (tentu dengan menyertakan relasi kategori barang) 
+    2. Load library Spreadsheet dan kita tentukan header data pada baris pertama di excel 
+    3. Looping data yang telah kita dapatkan dari database, kemudian kita masukkan ke dalam cell excel
+    4. Set lebar tiap kolom di excel untuk menyesuaikan dengan panjang karakter pada masing-masing kolom
+    5. Set nama sheet, dan proses untuk dapat di download oleh pengguna
 
 📌 **File yang diubah/dibuat:**
-- 
+- `resources/views/barang/index.blade.php`
+- `routes/web.php`
+- `app/Http/Controllers/BarangController.php`
 
 Hasil:<br>
 
-> 
+> Disini kita bisa mengexport data yang ada dalam bentuk excel
 
-<!-- ![img](img/P2.png) -->
+![gif](img/P2.gif)
 
 ### Tugas 2 – Implementasi File Export Excel: 
 1. Silahkan implementasikan praktikum 2 pada project kalian masing-masing untuk semua 
 menu 
-2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan 
-3. Submit kode untuk impementasi prakktikum 2 pada repository github kalian. 
+2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan (Sudah)
+3. Submit kode untuk impementasi prakktikum 2 pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS))
 
 ## Praktikum 3 – Implementasi Export PDF di Laravel dengan `dompdf`
 - 
