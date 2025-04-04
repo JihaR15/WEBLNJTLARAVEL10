@@ -60,23 +60,32 @@ menu
 3. Submit kode untuk impementasi prakktikum 2 pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS))
 
 ## Praktikum 3 – Implementasi Export PDF di Laravel dengan `dompdf`
-- 
+- Install library dompdf
+    ```cmd
+    composer require barryvdh/laravel-dompdf
+    ```
+- Menambahkan tombol export ke pdf pada `barang/index.blade.php` 
+- Menambahkan `route/web.php` untuk proses export pdf.
+- Membuat fungsi `export_pdf()` pada `BarangController.php`
+- Membuat view untuk dijadikan pdf dari layout html dan juga view untuk me-generate html untuk tampilan pdf yang akan disajikan. dengan nama `barang/export_pdf.blade.php`
 
 📌 **File yang diubah/dibuat:**
-- 
+- `resources/views/barang/index.blade.php`
+- `routes/web.php`
+- `app/Http/Controllers/BarangController.php`
+- `barang/export_pdf.blade.php`
 
 Hasil:<br>
 
-> 
+> Maka akan muncul tombol baru yaitu Export Barang dengan logo pdf, yang jika diklik maka pdf akan langsung dibuatkan seperti dibawah ini:
 
-<!-- ![gif](img/P3-1.gif) -->
+![gif](img/P3.gif)
 
 
 ### Tugas 3 – Implementasi Export PDF pada Laravel :
-1. Silahkan implementasikan export pdf pada project kalian masing-masing untuk semua 
-menu 
-2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan 
-3. Submit kode untuk impementasi export pdf pada repository github kalian. 
+1. Silahkan implementasikan export pdf pada project kalian masing-masing untuk semua menu 
+2. Amati dan jelaskan tiap tahapan yang kalian kerjakan, dan jabarkan dalam laporan (Sudah)
+3. Submit kode untuk impementasi export pdf pada repository github kalian. ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS))
 
 
 ### Tugas 4 – Implementasi Upload File Gambar :
