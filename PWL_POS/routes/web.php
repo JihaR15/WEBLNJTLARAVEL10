@@ -5,6 +5,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\StokController;
+use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -65,7 +67,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
 
    // Route Barang
    // artinya semua route di dalam group ini harus punya role ADM dan MNG
-   Route::middleware(['authorize:ADM,MNG'])->group(function(){
+   Route::middleware(['authorize:ADM,MNG,STF'])->group(function(){
       Route::get('/barang', [BarangController::class, 'index']);
       Route::post('/barang/list', [BarangController::class, 'list']);
       Route::get('/barang/create', [BarangController::class, 'create']);
@@ -122,6 +124,42 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
       Route::get('/supplier/{id}/delete_ajax', [SupplierController::class, 'confirm_ajax']); 
       Route::delete('/supplier/{id}/delete_ajax', [SupplierController::class, 'delete_ajax']); 
       Route::delete('/supplier/{id}', [SupplierController::class, 'destroy']);
+   });
+
+   Route::middleware(['authorize:ADM,MNG,STF'])->group(function() {
+      Route::get('/stok',[StokController::class,'index']);
+      Route::post('/stok/list',[StokController::class,'list']); 
+      Route::get('/stok/create',[StokController::class,'create']);
+      Route::post('/stok/',[StokController::class,'store']);
+      Route::get('/stok/create_ajax',[StokController::class,'create_ajax']);
+      Route::post('/stok/ajax',[StokController::class,'store_ajax']);
+      Route::get('/stok/{id}',[StokController::class,'show']);
+      Route::get('/stok/{id}/edit',[StokController::class,'edit']);
+      Route::put('/stok/{id}',[StokController::class,'update']);
+      Route::get('/stok/{id}/show_ajax',[StokController::class,'show_ajax']);
+      Route::get('/stok/{id}/edit_ajax', [StokController::class,'edit_ajax']);
+      Route::put('/stok/{id}/update_ajax', [StokController::class,'update_ajax']);
+      Route::get('/stok/{id}/delete_ajax', [StokController::class,'confirm_ajax']);
+      Route::delete('/stok/{id}/delete_ajax', [StokController::class,'delete_ajax']);
+      Route::delete('/stok/{id}',[StokController::class,'destroy']);
+   });
+
+   Route::middleware(['authorize:ADM,MNG,STF'])->group(function() {
+      Route::get('/penjualan',[PenjualanController::class,'index']);
+      Route::post('/penjualan/list',[PenjualanController::class,'list']); 
+      Route::get('/penjualan/create',[PenjualanController::class,'create']);
+      Route::post('/penjualan/',[PenjualanController::class,'store']);
+      Route::get('/penjualan/create_ajax',[PenjualanController::class,'create_ajax']);
+      Route::post('/penjualan/ajax',[PenjualanController::class,'store_ajax']);
+      Route::get('/penjualan/{id}',[PenjualanController::class,'show']);
+      Route::get('/penjualan/{id}/edit',[PenjualanController::class,'edit']);
+      Route::put('/penjualan/{id}',[PenjualanController::class,'update']);
+      Route::get('/penjualan/{id}/show_ajax',[PenjualanController::class,'show_ajax']);
+      Route::get('/penjualan/{id}/edit_ajax', [PenjualanController::class,'edit_ajax']);
+      Route::put('/penjualan/{id}/update_ajax', [PenjualanController::class,'update_ajax']);
+      Route::get('/penjualan/{id}/delete_ajax', [PenjualanController::class,'confirm_ajax']);
+      Route::delete('/penjualan/{id}/delete_ajax', [PenjualanController::class,'delete_ajax']);
+      Route::delete('/penjualan/{id}',[PenjualanController::class,'destroy']);
    });
 
 
