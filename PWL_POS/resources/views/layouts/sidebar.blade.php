@@ -76,13 +76,13 @@
       </a>
       </li>
     @endif
-      <li class="nav-header">Aksi</li>
+      {{-- <li class="nav-header">Aksi</li>
       <li class="nav-item bg-danger rounded">
         <a href="{{ url('/logout') }}" class="nav-link">
           <i class="nav-icon fas fa-power-off"></i>
           <p>Logout</p>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </nav>
 </div>
