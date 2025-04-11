@@ -8,7 +8,7 @@
                 @if ($key == count($breadcrumb->list) - 1)
                     <li class="bredcrumb-item active">{{ $value }}</li>
                 @else
-                    <li class="bredcrumb-item">{{ $value }}</li>
+                    <li class="bredcrumb-item">{{ $value }} <span class="mx-1">/</span></li>
                 @endif
             @endforeach
             </ol>
