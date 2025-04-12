@@ -62,6 +62,8 @@
   </div>
   <!-- ./wrapper -->
 
+  <div id="modal-container"></div>
+
   <!-- jQuery -->
   <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
   <!-- Bootstrap 4 -->
@@ -95,6 +97,25 @@
       }
     });
   </script>
+
+  <script>
+    $(document).on('click', '.btn-edit-akun', function(e) {
+        e.preventDefault();
+        let url = $(this).attr('href');
+    
+        $.get(url, function(response) {
+            $('#modal-container').html(response);
+            $('#modal-master').modal('show');
+        }).fail(function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: 'Tidak dapat memuat form edit.'
+            });
+        });
+    });
+  </script>
+
   @stack('js')
 </body>
 

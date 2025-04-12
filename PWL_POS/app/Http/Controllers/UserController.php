@@ -239,6 +239,14 @@ class UserController extends Controller
         return view('user.edit_ajax', ['user' => $user, 'level' => $level]);
     }
 
+    public function edit_profile(string $id)
+    {
+        $user = UserModel::find($id);
+        $level = LevelModel::all();
+
+        return view('user.edit_profile', ['user' => $user, 'level' => $level]);
+    }
+
     public function update_ajax(Request $request, $id)
     {
         // cek apakah request dari ajax 

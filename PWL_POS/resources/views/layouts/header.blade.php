@@ -137,7 +137,7 @@
 
     @php
     $user = Auth::user();
-  @endphp
+    @endphp
 
     <li class="nav-item dropdown">
       <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#" role="button">
@@ -153,7 +153,9 @@
       </a>
 
       <div class="dropdown-menu dropdown-menu-right">
-        <a href="{{ url('/edit-akun') }}" class="dropdown-item">
+        <a href="{{ url('/' . $user->user_id . '/edit_profile') }}" 
+          class="dropdown-item btn-edit-akun" 
+          data-id="{{ $user->user_id }}">
           <i class="fas fa-user-cog mr-2 text-secondary"></i> Edit Akun
         </a>
         <div class="dropdown-divider"></div>
@@ -171,3 +173,4 @@
     display: block;
   }
 </style>
+

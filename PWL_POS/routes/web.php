@@ -24,6 +24,8 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
 
    // masukkan semua route yang perlu autentikasi disini
    Route::get('/', [WelcomeController::class,'index']);
+   Route::get('/{id}/edit_profile', [UserController::class,'edit_profile']);
+   Route::put('/{id}/update_ajax', [UserController::class,'update_ajax']);
 
    // route level
    // artinya sema route di dalam group ini harus punya role ADM (Administrator)
