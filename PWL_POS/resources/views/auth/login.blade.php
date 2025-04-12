@@ -15,59 +15,205 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+
+    <style>
+        body {
+            background: #f4f6f9;
+            /* font-family: 'Segoe UI', sans-serif; */
+        }
+
+        .login-wrapper {
+            display: flex;
+            min-height: 100vh;
+            flex-wrap: wrap;
+        }
+
+        .login-left {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #ddd;
+            position: relative;
+        }
+
+        .login-left img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-left::after {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: white;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+
+        .login-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .login-form-full {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .text-center a {
+            color: #007bff;
+        }
+
+        .error-text {
+            font-size: 0.85rem;
+        }
+
+        .input-group{
+            
+        }
+        .form-group-custom {
+            margin-bottom: 20px;
+        }
+
+        .input-icon {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+
+        .input-icon span {
+            margin-right: 10px;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .input-icon input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px 0;
+            background: transparent;
+        }
+
+        .btn-login-full {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(270deg, #007bff, #00c6ff, #007bff);
+            background-size: 600% 600%;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-position 0.5s ease;
+        }
+
+        .btn-login-full:hover {
+            background-position: right center;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .icheck-primary {
+            display: flex;
+            align-items: center;
+        }
+
+        .icheck-primary input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+    </style>
 </head>
 
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center"><a href="{{ url('/') }}"
-                    class="h1"><b>Admin</b>LTE</a></div>
-            <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+<body>
+    <div class="login-wrapper">
+        <!-- Bagian Kiri -->
+        <div class="login-left">
+            <img src="{{ asset('img/shopping-bag1.svg') }}" alt="Shopping Illustration" class="img-fluid" style="max-width: 80%;">
+
+            <div class="text-center mt-4">
+                <h4 class="font-weight-bold mb-1">PWL <span class="text-primary">POS</span></h4>
+                <p class="text-muted">Jiha Ramdhan / 14 / 2341720043 / TI-2A</p>
+            </div>
+        </div>
+
+        <!-- Bagian Kanan -->
+        <div class="login-right">
+            <div class="login-form-full">
+                <h2 class=" mb-1 text-left"><b>Selamat Datang!</b></h2>
+                <p class="text-left text-muted mb-5">Silakan login untuk masuk</p>
+        
                 <form action="{{ url('/login') }}" method="POST" id="form-login">
                     @csrf
-                    <div class="input-group mb-3">
-                        <input type="text" id="username" name="username" class="form-control"
-                            placeholder="Username">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
+                    <div class="input-group form-group-custom">
+                        <div class="input-icon">
+                            <span class="fas fa-user"></span>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
                         </div>
                         <small id="error-username" class="error-text text-danger"></small>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" id="password" name="password" class="form-control"
-                            placeholder="Password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
+                
+                    <div class="input-group form-group-custom">
+                        <div class="input-icon">
+                            <span class="fas fa-lock"></span>
+                            <input type="password" id="password" name="password" placeholder="Password">
                         </div>
                         <small id="error-password" class="error-text text-danger"></small>
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember"><label for="remember">Remember Me</label>
-                            </div>
+                
+                    <div class="form-group-custom remember-login">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Ingat saya</label>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                        </div>
-                        <!-- /.col -->
                     </div>
+                
+                    <button type="submit" class="btn-login-full mb-4 mt-4">Login</button>
                 </form>
-                <p class="mt-4 mb-0 text-center">
-                     Belum punya akun? <a href="{{ url('register') }}" >Daftar disini</a>
+                
+        
+                <p class="text-center">
+                    Belum punya akun? <a href="{{ url('register') }}">Daftar disini</a>
+                </p>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    <!-- /.login-box -->
+
+    <style>
+        @media (max-width: 768px) {
+        
+            .login-left, .login-right {
+                flex: 1 0 auto;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                padding: 1rem;
+            }
+        
+            .login-left img {
+                max-width: 60%;
+            }
+        
+            .login-form-full {
+                max-width: 100%;
+            }
+        
+            .btn-login-full {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
 
     <!-- jQuery -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
@@ -82,12 +228,6 @@
     <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
 
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
         $(document).ready(function() {
             $("#form-login").validate({
                 rules: {
@@ -102,13 +242,14 @@
                         maxlength: 20
                     }
                 },
-                submitHandler: function(form) { // ketika valid, maka bagian yg akan dijalankan 
+                
+                submitHandler: function(form) {
                     $.ajax({
                         url: form.action,
                         type: form.method,
                         data: $(form).serialize(),
                         success: function(response) {
-                            if (response.status) { // jika sukses 
+                            if (response.status) {
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Berhasil',
@@ -116,7 +257,7 @@
                                 }).then(function() {
                                     window.location = response.redirect;
                                 });
-                            } else { // jika error 
+                            } else {
                                 $('.error-text').text('');
                                 $.each(response.msgField, function(prefix, val) {
                                     $('#error-' + prefix).text(val[0]);
@@ -136,10 +277,10 @@
                     error.addClass('invalid-feedback');
                     element.closest('.input-group').append(error);
                 },
-                highlight: function(element, errorClass, validClass) {
+                highlight: function(element) {
                     $(element).addClass('is-invalid');
                 },
-                unhighlight: function(element, errorClass, validClass) {
+                unhighlight: function(element) {
                     $(element).removeClass('is-invalid');
                 }
             });
