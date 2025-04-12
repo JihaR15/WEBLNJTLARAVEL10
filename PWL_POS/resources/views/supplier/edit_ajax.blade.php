@@ -35,14 +35,19 @@
                         <small id="error-supplier-kode" class="error-text form-text text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label>Supplier Nama</label>
+                        <label>Nama Supplier </label>
                         <input value="{{ $supplier->supplier_nama }}" type="text" name="supplier_nama" id="supplier_nama" class="form-control" required>
                         <small id="error-supplier-nama" class="error-text form-text text-danger"></small>
                     </div>
                     <div class="form-group">
-                        <label>Supplier Alamat</label>
+                        <label>Alamat Supplier </label>
                         <input value="{{ $supplier->supplier_alamat }}" type="text" name="supplier_alamat" id="supplier_alamat" class="form-control" required>
                         <small id="error-supplier-alamat" class="error-text form-text text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label>No. Telp Supplier</label>
+                        <input value="{{ $supplier->supplier_telepon }}" type="text" name="supplier_telepon" id="supplier_telepon" class="form-control" required>
+                        <small id="error-supplier-telepon" class="error-text form-text text-danger"></small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -56,9 +61,10 @@
         $(document).ready(function() {
             $("#form-edit").validate({
                 rules: {
-                    supplier_kode: { required: true, minlength: 7, maxlength: 10 },
+                    supplier_kode: { required: true, minlength: 3, maxlength: 10 },
                     supplier_nama: { required: true, maxlength: 100 },
-                    supplier_alamat: { required: true }
+                    supplier_alamat: { required: true },
+                    supplier_telepon: { required: true, maxlength: 15 }
                 },
                 submitHandler: function(form) {
                     $.ajax({
