@@ -144,6 +144,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
       Route::get('/stok/{id}/delete_ajax', [StokController::class,'confirm_ajax']);
       Route::delete('/stok/{id}/delete_ajax', [StokController::class,'delete_ajax']);
       Route::delete('/stok/{id}',[StokController::class,'destroy']);
+      Route::get('/stok/export_pdf', [StokController::class, 'export_pdf']);
    });
 
    Route::middleware(['authorize:ADM,MNG,STF'])->group(function() {
@@ -162,6 +163,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
       Route::get('/penjualan/{id}/delete_ajax', [PenjualanController::class,'confirm_ajax']);
       Route::delete('/penjualan/{id}/delete_ajax', [PenjualanController::class,'delete_ajax']);
       Route::delete('/penjualan/{id}',[PenjualanController::class,'destroy']);
+      Route::get('/penjualan/export_pdf', [PenjualanController::class, 'export_pdf']);
    });
 
 

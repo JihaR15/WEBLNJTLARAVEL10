@@ -9,6 +9,7 @@ use App\Models\UserModel;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class StokController extends Controller
 {
@@ -186,5 +187,20 @@ class StokController extends Controller
             }
         }
         return redirect('/');
+    }
+
+    public function export_pdf(){
+        $stok = StokModel::select('stok_id','barang_id', 'user_id','stok_tanggal','stok_jumlah')
+                    ->orderBy('stok_id')
+                    ->with('barang')
+                    ->with('user')
+                    ->get();
+
+    $pdf = Pdf::loadView('stok.export_pdf',['stok' => $stok]);
+    $pdf->setPaper('a4','portrait'); // set ukuran kertas dan orientasi
+    $pdf->setOption("isRemoteEnabled", true); // set true jika ada gambar dari url
+    $pdf->render();
+
+    return $pdf->stream('Data Stok '. date('Y-m-d H:i:s'). '.pdf');
     }
 }
