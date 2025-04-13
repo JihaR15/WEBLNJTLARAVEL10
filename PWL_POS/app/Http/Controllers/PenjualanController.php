@@ -56,7 +56,12 @@ class PenjualanController extends Controller
 
     public function create_ajax()
     {
-        $barang = BarangModel::all();
+        $barang = BarangModel::whereIn('barang_id', function($query) {
+            $query->select('barang_id')
+                  ->from('t_stok')
+                  ->where('stok_jumlah', '>', 0);
+        })->get(); // cuma barang yang ada stoknya yang ditampilin
+
         $user = Auth::user(); // ambil user yang login
         $kode = 'PJ-' .  PenjualanModel::orderBy('penjualan_id', 'desc')->value('penjualan_id') + 1;
 
@@ -110,6 +115,29 @@ class PenjualanController extends Controller
                         'harga' => $request->harga[$i],
                         'jumlah' => $request->jumlah[$i],
                     ]);
+
+                    // kurangi stok
+                    $stok = StokModel::where('barang_id', $barang_id)->first();
+                    if ($stok) {
+                        if ($stok->stok_jumlah >= $request->jumlah[$i]) {
+                            $stok->stok_jumlah -= $request->jumlah[$i];
+                            $stok->save();
+                        } else {
+                            // rollback jika stok tidak mencukupi
+                            DB::rollBack();
+                            return response()->json([
+                                'status' => false,
+                                'message' => 'Stok barang ' . $stok->barang->barang_nama . ' tidak mencukupi'
+                            ]);
+                        }
+                    } else {
+                        // rollback jika stok tidak ditemukan
+                        DB::rollBack();
+                        return response()->json([
+                            'status' => false,
+                            'message' => 'Stok untuk barang tidak ditemukan'
+                        ]);
+                    }
                 }
     
                 DB::commit();

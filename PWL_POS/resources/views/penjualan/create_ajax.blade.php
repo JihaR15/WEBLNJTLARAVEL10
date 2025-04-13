@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label>Penjualan Kode</label>
                     <input type="text" name="penjualan_kode" id="penjualan_kode" class="form-control"
-                        value="{{ old('penjualan_kode', $kode) }}" required>
+                        value="{{ old('penjualan_kode', $kode) }}" readonly required>
                     <small id="error-penjualan-kode" class="error-text form-text text-danger"></small>
                 </div>
                 <div class="form-group">
@@ -45,6 +45,7 @@
                         <div class="col-md-4">
                             <label>Barang</label>
                             <select name="barang_id[]" class="form-control">
+                                <option value="">- Pilih Barang -</option>
                                 @foreach ($barang as $b)
                                     <option value="{{ $b->barang_id }}" data-harga="{{ $b->harga_jual }}">{{ $b->barang_nama }}</option>
                                 @endforeach
@@ -67,14 +68,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group text-left mt-3">
+                <button type="button" class="btn btn-secondary my-2 #btn-tambah-detail  w-100" id="btn-tambah-detail">+ Tambah Barang</button>
+                <div class=" text-left mt-3 ">
                     <label><strong>Total Keseluruhan:</strong></label>
-                    <input type="text" id="totalKeseluruhan" class="form-control font-weight-bold" readonly>
+                    <input type="text" id="totalKeseluruhan" class="form-control font-weight-bold text-left" readonly>
                 </div>
                 
             </div>
 
-            <button type="button" class="btn btn-secondary my-2" id="btn-tambah-detail">+ Tambah Barang</button>
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="btn btn-warning">Batal</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
