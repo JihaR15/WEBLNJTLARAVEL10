@@ -7,7 +7,7 @@
             <div class="card-tools">
                 {{-- <button onclick="modalAction('{{ url('/stok/import') }}')" class="btn btn-sm btn-info">Import Barang</button>  --}}
                 {{-- <a href="{{ url('/stok/export_excel') }}" class="btn btn-sm btn-primary"><i class="fa fa-file-excel"></i> Export Barang</a> --}}
-                <a href="{{ url('/stok/export_pdf') }}" class="btn btn-sm btn-warning"><i class="fa fa-file-pdf"></i> Export Stok</a>
+                <a href="{{ url('/stok/export_pdf') }}" class="btn btn-sm btn-warning" target="_blank"><i class="fa fa-file-pdf"></i> Export Stok</a>
                 <button onclick="modalAction('{{ url('stok/create_ajax') }}')" class="btn btn-sm btn-success">
                     Tambah Data
                 </button>
@@ -44,7 +44,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Barang</th>
-                        <th>Nama User</th>
+                        <th>Penginput</th>
                         <th>Tanggal</th>
                         <th>Jumlah</th>
                         <th>Aksi</th>
