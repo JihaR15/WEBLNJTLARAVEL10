@@ -103,9 +103,13 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Berhasil',
-                                text: response.message
+                                text: response.message,
+                                didClose: () => {
+                                    // Ganti kode ini untuk memanggil modal dan menampilkan struk
+                                    showStruk(response.struk_url);  // Panggil fungsi showStruk dengan URL struk
+                                    dataPenjualan.ajax.reload();
+                                }
                             });
-                            dataPenjualan.ajax.reload();
                         } else {
                             $('.error-text').text('');
                             $.each(response.msgField, function (prefix, val) {

@@ -144,7 +144,8 @@ class PenjualanController extends Controller
     
                 return response()->json([
                     'status' => true,
-                    'message' => 'Data Penjualan dan Detail berhasil disimpan'
+                    'message' => 'Data Penjualan dan Detail berhasil disimpan',
+                    'struk_url' => url('/penjualan/struk/' . $penjualan->penjualan_id)
                 ]);
             } catch (\Exception $e) {
                 DB::rollback();
@@ -266,4 +267,10 @@ class PenjualanController extends Controller
 
     return $pdf->stream('Data Penjualan '. date('Y-m-d H:i:s'). '.pdf');
     }
+
+    public function struk($id){
+        $penjualan = PenjualanModel::with(['detail.barang', 'user'])->findOrFail($id);
+        return view('penjualan.struk', compact('penjualan'));
+    }
+
 }

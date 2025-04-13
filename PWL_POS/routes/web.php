@@ -167,7 +167,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
       Route::delete('/penjualan/{id}/delete_ajax', [PenjualanController::class,'delete_ajax']);
       Route::delete('/penjualan/{id}',[PenjualanController::class,'destroy']);
       Route::get('/penjualan/export_pdf', [PenjualanController::class, 'export_pdf']);
-      // Route::get('/penjualan/struk/{id}', [PenjualanController::class, 'struk']);
+      Route::get('/penjualan/struk/{id}', [PenjualanController::class, 'struk']);
    });
 
 

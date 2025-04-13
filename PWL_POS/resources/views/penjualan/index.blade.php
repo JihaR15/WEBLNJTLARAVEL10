@@ -53,6 +53,25 @@
             </table>
         </div>
     </div>
+
+    <!-- Modal Struk -->
+    <div class="modal fade" id="modalStruk" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Struk Penjualan</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalStrukContent">
+              <!-- struk AJAX -->
+            </div>
+            <div class="modal-footer">
+              <button onclick="printStruk()" class="btn btn-primary">Cetak</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div id="myModal" class="modal fade animate shake" tabindex="-1" role="dialog" data-backdrop="static"
         data-keyboard="false" data-width="75%" aria-hidden="true"></div>
 @endsection
@@ -131,5 +150,47 @@
         $('#user_id').on('change', function() {
             dataPenjualan.ajax.reload();
         });
+
+        function printStruk() {
+            var strukContent = document.getElementById('modalStrukContent').innerHTML;
+
+            var printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Struk Penjualan</title>
+                    <style>
+                        body { font-family: monospace; padding: 10px; }
+                        .center { text-align: center; }
+                        table { width: 100%; border-collapse: collapse; }
+                        th, td { padding: 4px; text-align: left; font-size: 12px; }
+                        .footer { margin-top: 10px; text-align: center; font-size: 12px; }
+                        .total { font-weight: bold; font-size: 14px; margin-top: 10px; }
+                    </style>
+                </head>
+                <body>
+                    ${strukContent}
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        function showStruk(strukUrl) {
+            console.log("Struk URL: ", strukUrl); 
+            // Memuat konten struk ke dalam modal menggunakan AJAX
+            $.get(strukUrl, function(data) {
+                console.log("Data struk: ", data);
+                $('#modalStrukContent').html(data);  // Isi modal dengan data struk
+                console.log('Menampilkan modalStruk');
+                $('#modalStruk').modal('show');      // Tampilkan modal
+            }).fail(function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Terjadi Kesalahan',
+                    text: 'Tidak dapat memuat struk.'
+                });
+            });
+        }
     </script>
 @endpush
