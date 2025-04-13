@@ -247,6 +247,59 @@ class UserController extends Controller
         return view('user.edit_profile', ['user' => $user, 'level' => $level]);
     }
 
+    public function update_ajax2(Request $request, $id)
+    {
+        // cek apakah request dari ajax 
+        if ($request->ajax() || $request->wantsJson()) {
+            $rules = [
+                'username' => 'required|max:20|unique:m_user,username,' . $id . ',user_id',
+                'nama'     => 'required|max:100',
+                'password' => 'nullable|min:5|max:20',
+                'profile_picture' => 'nullable|image|max:2048'
+            ];
+
+            // use Illuminate\Support\Facades\Validator; 
+            $validator = Validator::make($request->all(), $rules);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status'   => false,    // respon json, true: berhasil, false: gagal 
+                    'message'  => 'Validasi gagal.',
+                    'msgField' => $validator->errors()  // menunjukkan field mana yang error 
+                ]);
+            }
+
+            $check = UserModel::find($id);
+            if ($check) {
+                if (!$request->filled('password')) { // jika password tidak diisi, maka hapus dari request 
+                    $request->request->remove('password');
+                }
+
+                $data = $request->all();
+                if ($request->hasFile('profile_picture')) {
+                    $image = $request->file('profile_picture');
+                    $imageName = 'profile-' . $id . '.webp';
+                    $image->storeAs('public/profile_pictures', $imageName);
+                    $data['picture_path'] = 'storage/profile_pictures/' . $imageName;
+                    unset($data['profile_picture']);
+                }
+
+                $check->update($data);
+                return response()->json([
+                    'status'  => true,
+                    'message' => 'Data berhasil diupdate'
+                ]);
+            } else {
+                return response()->json([
+                    'status'  => false,
+                    'message' => 'Data tidak ditemukan'
+                ]);
+            }
+        }
+        return redirect('/');
+    }
+
+
     public function update_ajax(Request $request, $id)
     {
         // cek apakah request dari ajax 

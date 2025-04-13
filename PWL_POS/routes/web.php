@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
    // masukkan semua route yang perlu autentikasi disini
    Route::get('/', [WelcomeController::class,'index']);
    Route::get('/{id}/edit_profile', [UserController::class,'edit_profile']);
-   Route::put('/{id}/update_ajax', [UserController::class,'update_ajax']);
+   Route::put('/{id}/update_ajax2', [UserController::class,'update_ajax2']);
 
    // route level
    // artinya sema route di dalam group ini harus punya role ADM (Administrator)
@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function(){ //artinya semua route di dalam gr
 
    // Route Barang
    // artinya semua route di dalam group ini harus punya role ADM dan MNG
-   Route::middleware(['authorize:ADM,MNG,STF'])->group(function(){
+   Route::middleware(['authorize:ADM,MNG'])->group(function(){
       Route::get('/barang', [BarangController::class, 'index']);
       Route::post('/barang/list', [BarangController::class, 'list']);
       Route::get('/barang/create', [BarangController::class, 'create']);

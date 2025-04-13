@@ -18,7 +18,7 @@
         </div>
     </div>
 @else
-    <form action="{{ url('/' . $user->user_id . '/update_ajax') }}" method="POST" id="form-edit"
+    <form action="{{ url('/' . $user->user_id . '/update_ajax2') }}" method="POST" id="form-edit"
         enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -35,8 +35,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label>Level Pengguna</label>
-                                    <select name="level_id" id="level_id" class="form-control" required disabled>
-                                        <option value="">- Pilih Level -</option>
+                                    <select name="level_id" id="level_id" class="form-control" disabled>
                                         @foreach($level as $l)
                                             <option value="{{ $l->level_id }}" {{ $l->level_id == $user->level_id ? 'selected' : '' }}>
                                                 {{ $l->level_nama }}
@@ -99,10 +98,6 @@
         $(document).ready(function () {
             $("#form-edit").validate({
                 rules: {
-                    level_id: {
-                        required: true,
-                        number: true
-                    },
                     username: {
                         required: true,
                         minlength: 3,

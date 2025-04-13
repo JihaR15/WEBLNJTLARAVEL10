@@ -35,33 +35,31 @@
       </li>
     @endif
 
-      @if(in_array(Auth::user()->level->level_kode, haystack: ['ADM', 'MNG', 'STF']))
+
+    @if(in_array(Auth::user()->level->level_kode, ['ADM', 'MNG']))
       <li class="nav-header">Data Barang</li>
-    @endif
-      @if(in_array(Auth::user()->level->level_kode, ['ADM', 'MNG']))
       <li class="nav-item">
       <a href="{{ url('/kategori') }}" class="nav-link {{ ($activeMenu == 'kategori') ? 'active' : '' }} ">
         <i class="nav-icon far fa-bookmark"></i>
         <p>Kategori Barang</p>
       </a>
       </li>
-    @endif
-      @if(in_array(Auth::user()->level->level_kode, ['ADM', 'MNG', 'STF']))
       <li class="nav-item">
-      <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang') ? 'active' : '' }} ">
-        <i class="nav-icon far fa-list-alt"></i>
-        <p>Data Barang</p>
-      </a>
+        <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang') ? 'active' : '' }} ">
+          <i class="nav-icon far fa-list-alt"></i>
+          <p>Data Barang</p>
+        </a>
       </li>
-      @if(in_array(Auth::user()->level->level_kode, ['ADM', 'MNG']))
       <li class="nav-header">Data Supplier</li>
       <li class="nav-item">
-      <a href="{{ url('/supplier') }}" class="nav-link {{ $activeMenu == 'supplier' ? 'active' : '' }} ">
-      <i class="nav-icon fas fa-truck"></i>
-      <p>Data Supplier</p>
-      </a>
+        <a href="{{ url('/supplier') }}" class="nav-link {{ $activeMenu == 'supplier' ? 'active' : '' }} ">
+          <i class="nav-icon fas fa-truck"></i>
+          <p>Data Supplier</p>
+        </a>
       </li>
-    @endif
+      @endif
+      @if(in_array(Auth::user()->level->level_kode, ['ADM', 'MNG', 'STF']))
+      
       <li class="nav-header">Data Transaksi</li>
       <li class="nav-item">
       <a href="{{ url('/stok') }}" class="nav-link {{ ($activeMenu == 'stok') ? 'active' : '' }} ">
