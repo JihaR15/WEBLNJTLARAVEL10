@@ -1,6 +1,5 @@
 @empty($user)
-    <div class="modal fade" id="modal-master" tabindex="-1" role="dialog">
-        <div id="modalEditProfile" class="modal-dialog modal-lg" role="document">
+<div id="modal-master" class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Kesalahan</h5>
@@ -15,15 +14,13 @@
                     <a href="{{ url('/user') }}" class="btn btn-warning">Kembali</a>
                 </div>
             </div>
-        </div>
     </div>
 @else
     <form action="{{ url('/' . $user->user_id . '/update_ajax2') }}" method="POST" id="form-edit"
         enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="modal fade" id="modal-master" tabindex="-1" role="dialog">
-            <div id="modalEditProfile" class="modal-dialog modal-lg" role="document">
+        <div id="modal-master" class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Edit Data User</h5>
@@ -90,7 +87,6 @@
                         <button type="button" data-dismiss="modal" class="btn btn-warning">Batal</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
-                </div>
             </div>
         </div>
     </form>
