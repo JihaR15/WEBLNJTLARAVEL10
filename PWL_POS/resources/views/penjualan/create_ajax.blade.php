@@ -47,7 +47,7 @@
                             <select name="barang_id[]" class="form-control">
                                 <option value="">- Pilih Barang -</option>
                                 @foreach ($barang as $b)
-                                    <option value="{{ $b->barang_id }}" data-harga="{{ $b->harga_jual }}">{{ $b->barang_nama }}</option>
+                                    <option value="{{ $b->barang_id }}" data-harga="{{ $b->harga_jual }}">{{ $b->barang_nama }} ({{ $b->stok_jumlah }}) </option>
                                 @endforeach
                             </select>
                         </div>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="col-md-2">
                             <label>Jumlah</label>
-                            <input type="number" name="jumlah[]" class="form-control" required>
+                            <input type="number" name="jumlah[]" class="form-control" required value="1">
                         </div>
                         <div class="col-md-2">
                             <label>Subtotal</label>
@@ -186,9 +186,28 @@
     // Re-hitung saat tambah detail
     $('#btn-tambah-detail').on('click', function () {
         let clone = $('.detail-item').first().clone();
-        clone.find('input').val('');
+
+        clone.find('select[name="barang_id[]"]').val('');
+        clone.find('input[name="harga[]"]').val('');
+        clone.find('input[name="jumlah[]"]').val(1);
+        clone.find('input[name="subtotal[]"]').val('');
+
         $('#detail-container').append(clone);
         hitungSubtotalDanTotal();
+    });
+
+    // buat isi otomatis tanggal
+    $(document).ready(function () {
+        let now = new Date();
+
+        let year = now.getFullYear();
+        let month = String(now.getMonth() + 1).padStart(2, '0'); 
+        let day = String(now.getDate()).padStart(2, '0');
+        let hours = String(now.getHours()).padStart(2, '0');
+        let minutes = String(now.getMinutes()).padStart(2, '0');
+
+        let formatted = `${year}-${month}-${day}T${hours}:${minutes}`;
+        $('#penjualan_tanggal').val(formatted);
     });
 
 </script>

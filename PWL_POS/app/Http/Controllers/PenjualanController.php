@@ -56,11 +56,11 @@ class PenjualanController extends Controller
 
     public function create_ajax()
     {
-        $barang = BarangModel::whereIn('barang_id', function($query) {
-            $query->select('barang_id')
-                  ->from('t_stok')
-                  ->where('stok_jumlah', '>', 0);
-        })->get(); // cuma barang yang ada stoknya yang ditampilin
+        $barang = DB::table('m_barang')
+        ->join('t_stok', 'm_barang.barang_id', '=', 't_stok.barang_id')
+        ->where('t_stok.stok_jumlah', '>', 0)
+        ->select('m_barang.*', 't_stok.stok_jumlah')
+        ->get();// cuma barang yang ada stoknya yang ditampilin
 
         $user = Auth::user(); // ambil user yang login
         $kode = 'PJ-' .  PenjualanModel::orderBy('penjualan_id', 'desc')->value('penjualan_id') + 1;
