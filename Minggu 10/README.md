@@ -36,14 +36,11 @@ Hasil:<br>
 11. Melakukan uji coba REST API melalui aplikasi Postman. 
 Buka aplikasi Postman, isi URL localhost/PWL_POS/public/api/register serta method 
 POST. Klik Send. 
-<!-- ![img](img/P2.gif) -->
+![img](img/P1_1.png)
+
 12. Coba masukkan data. Klik tab Body dan pilih form-data. Isikan key sesuai 
 dengan kolom data, serta isikan data registrasi sesuai keinginan.
-<!-- ![img](img/P2.gif) -->
-
-<!-- ![gif](img/P1.gif) -->
-
-<!-- ([Link Commit](https://github.com/JihaR15/WEBLNJTLARAVEL10/commits/main/Minggu%208/PWL_POS)) -->
+![img](img/P1_2.png)
 
 
 ## Praktikum 2 – Membuat RESTful API untuk Login:
@@ -66,7 +63,7 @@ Hasil:<br>
 4. Melakukan uji coba REST API melalui aplikasi Postman. Buka 
 aplikasi Postman, isi URL localhost/PWL_POS/public/api/login serta method POST. 
 Klik Send.
-<!-- ![img](img/P2.gif) -->
+<!-- ![img](img/P1_1.png) -->
 
 5. isikan username dan password sesuai dengan data user yang ada pada 
 database. Klik tab Body dan pilih form-data. Isikan key sesuai dengan kolom data, serta 
