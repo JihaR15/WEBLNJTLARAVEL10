@@ -36,11 +36,11 @@ Hasil:<br>
 11. Melakukan uji coba REST API melalui aplikasi Postman. 
 Buka aplikasi Postman, isi URL localhost/PWL_POS/public/api/register serta method 
 POST. Klik Send. 
-![img](img/P1_1.png)
+![img](img/P1_1.png)<br>
 
 12. Coba masukkan data. Klik tab Body dan pilih form-data. Isikan key sesuai 
 dengan kolom data, serta isikan data registrasi sesuai keinginan.
-![img](img/P1_2.png)
+![img](img/P1_2.png)<br>
 
 
 ## Praktikum 2 – Membuat RESTful API untuk Login:
@@ -63,22 +63,24 @@ Hasil:<br>
 4. Melakukan uji coba REST API melalui aplikasi Postman. Buka 
 aplikasi Postman, isi URL localhost/PWL_POS/public/api/login serta method POST. 
 Klik Send.
-<!-- ![img](img/P1_1.png) -->
+![img](img/P2_1.png)<br>
 
 5. isikan username dan password sesuai dengan data user yang ada pada 
 database. Klik tab Body dan pilih form-data. Isikan key sesuai dengan kolom data, serta 
 isikan data user. Klik tombol Send, jika berhasil maka akan keluar tampilan seperti 
 berikut. Copy nilai token yang diperoleh pada saat login karena akan diperlukan pada 
 saat logout.
-<!-- ![img](img/P2.gif) -->
+![img](img/P2_2.png)<br>
+
 6. Lakukan percobaan yang untuk data yang salah dan berikan screenshoot hasil percobaan Anda. 
-<!-- ![img](img/P2.gif) -->
+![img](img/P2_3.png)<br>
 
 7. Coba kembali melakukan login dengan data yang benar. Sekarang mari kita coba 
 menampilkan data user yang sedang login menggunakan URL 
 `localhost/PWL_POS/public/api/user` dan method GET. Jelaskan hasil dari percobaan 
 tersebut. 
-<!-- ![img](img/P3.gif) -->
+![img](img/P2_4.png)<br>
+Jawab: Dari Screenshoot diatas kita bisa melihat data user yang sedang login dengan URL menggunakan `localhost/PWL_POS/public/api/user`, caranya di Tab bagian Auth, ubah Auth type nya ke Bearer Token, lalu masukkan Token yang sudah kita dapatkan Saat login pada poin No 5.
 
 ## Praktikum 3 – Membuat RESTful API untuk Logout:
 1. Tambahkan konfigurasi berikut ke .env:
