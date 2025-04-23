@@ -104,7 +104,8 @@ Hasil:<br>
 
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
 6. Isi token pada tab Authorization, pilih Type yaitu Bearer Token. Isikan token yang didapat saat login. Jika sudah klik Send.
-<!-- ![img](img/P3.gif) -->
+![img](img/P3_1.png)<br>
+
 
 
 ## Praktikum 4 – CRUD RESTful API (Tabel m_level):
