@@ -34,12 +34,11 @@ Hasil:<br>
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
 
 11. Melakukan uji coba REST API melalui aplikasi Postman. 
-Buka aplikasi Postman, isi URL localhost/PWL_POS/public/api/register serta method 
-POST. Klik Send. 
+Buka aplikasi Postman, isi URL `localhost/public/api/register` serta method 
+POST. Klik Send. <br>
 ![img](img/P1_1.png)<br>
 
-12. Coba masukkan data. Klik tab Body dan pilih form-data. Isikan key sesuai 
-dengan kolom data, serta isikan data registrasi sesuai keinginan.
+12. Coba masukkan data. Klik tab Body dan pilih form-data. Isikan key sesuai dengan kolom data, serta isikan data registrasi sesuai keinginan.<br>
 ![img](img/P1_2.png)<br>
 
 
@@ -61,24 +60,17 @@ Hasil:<br>
 
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
 4. Melakukan uji coba REST API melalui aplikasi Postman. Buka 
-aplikasi Postman, isi URL localhost/PWL_POS/public/api/login serta method POST. 
-Klik Send.
+aplikasi Postman, isi URL `localhost/public/api/login` serta method POST. 
+Klik Send.<br>
 ![img](img/P2_1.png)<br>
 
-5. isikan username dan password sesuai dengan data user yang ada pada 
-database. Klik tab Body dan pilih form-data. Isikan key sesuai dengan kolom data, serta 
-isikan data user. Klik tombol Send, jika berhasil maka akan keluar tampilan seperti 
-berikut. Copy nilai token yang diperoleh pada saat login karena akan diperlukan pada 
-saat logout.
+5. isikan username dan password sesuai dengan data user yang ada pada database. Klik tab Body dan pilih form-data. Isikan key sesuai dengan kolom data, serta isikan data user. Klik tombol Send, jika berhasil maka akan keluar tampilan seperti  berikut. Copy nilai token yang diperoleh pada saat login karena akan diperlukan pada saat logout.<br>
 ![img](img/P2_2.png)<br>
 
-6. Lakukan percobaan yang untuk data yang salah dan berikan screenshoot hasil percobaan Anda. 
+6. Lakukan percobaan yang untuk data yang salah dan berikan screenshoot hasil percobaan Anda. <br>
 ![img](img/P2_3.png)<br>
 
-7. Coba kembali melakukan login dengan data yang benar. Sekarang mari kita coba 
-menampilkan data user yang sedang login menggunakan URL 
-`localhost/PWL_POS/public/api/user` dan method GET. Jelaskan hasil dari percobaan 
-tersebut. 
+7. Coba kembali melakukan login dengan data yang benar. Sekarang mari kita coba menampilkan data user yang sedang login menggunakan URL `localhost/public/api/user` dan method GET. Jelaskan hasil dari percobaan tersebut. <br>
 ![img](img/P2_4.png)<br>
 Jawab: Dari Screenshoot diatas kita bisa melihat data user yang sedang login dengan URL menggunakan `localhost/PWL_POS/public/api/user`, caranya di Tab bagian Auth, ubah Auth type nya ke Bearer Token, lalu masukkan Token yang sudah kita dapatkan Saat login pada poin No 5.
 
@@ -103,7 +95,7 @@ Hasil:<br>
 > User dapat logout dari aplikasi dengan menyertakan token pada request. Token menjadi tidak valid setelah logout.
 
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
-6. Isi token pada tab Authorization, pilih Type yaitu Bearer Token. Isikan token yang didapat saat login. Jika sudah klik Send.
+6. Isi token pada tab Authorization, pilih Type yaitu Bearer Token. Isikan token yang didapat saat login. Jika sudah klik Send. <br>
 ![img](img/P3_1.png)<br>
 
 
@@ -125,24 +117,23 @@ Hasil:<br>
 > Kita dapat menampilkan, menambah, mengedit, menampilkan detail, dan menghapus data level melalui API yang telah dibuat.
 
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
-4.  Lakukan uji coba API mulai dari fungsi untuk menampilkan data. Gunakan URL: localhost/PWL_POS-main/public/api/levels dan method GET.
+4.  Lakukan uji coba API mulai dari fungsi untuk menampilkan data. Gunakan URL: `localhost/public/api/levels` dan method GET. <br>
 ![img](img/P4_1.png)<br>
     > Penjelasan: Route GET /api/levels digunakan untuk menampilkan seluruh data level yang ada di dalam database. Method index() di dalam controller akan memanggil fungsi LevelModel::all() untuk mengambil semua data dari tabel m_level, lalu mengembalikannya dalam format JSON 
 
-5.  lakukan percobaan penambahan data dengan URL : localhost/PWL_POS
-main/public/api/levels dan method POST seperti di bawah ini.   
+5.  lakukan percobaan penambahan data dengan URL : `localhost/public/api/levels` dan method POST seperti di bawah ini.<br>
 ![img](img/P4_2.png)<br>
     > Penjelasan: Route POST /api/levels digunakan untuk menambahkan data baru ke dalam tabel m_level. Saat request dikirim dengan method POST, method store() akan menangani data yang masuk dari request dan langsung menyimpannya ke database menggunakan LevelModel::create(). Setelah data berhasil disimpan, response berupa data yang baru dibuat dikembalikan dengan status kode 201 Created.
 
-6. lakukan percobaan menampilkan detail data. 
+6. lakukan percobaan menampilkan detail data. <br>
 ![img](img/P4_3.png)<br>
     > Penjelasan: Route GET /api/levels/{level} digunakan untuk menampilkan detail dari satu data level berdasarkan ID yang diberikan. Method show() akan secara otomatis mencari data sesuai ID sehingga kita langsung mendapatkan objek data level yang dimaksud tanpa perlu mencarinya lagi secara manual. Objek tersebut kemudian dikembalikan dalam bentuk JSON.
 
-7. coba untuk melakukan edit data menggunakan localhost/PWL_POS-main/public/api/levels/{id} dan method PUT. Isikan data yang ingin diubah pada tab Param.
+7. coba untuk melakukan edit data menggunakan `localhost/public/api/levels/{id}` dan method PUT. Isikan data yang ingin diubah pada tab Param. <br>
 ![img](img/P4_4.png)<br>
     > Penjelasan: Route PUT /api/levels/{level} digunakan untuk mengubah atau memperbarui data level yang sudah ada. Ketika request dikirim dengan method PUT, method update() akan menangani proses update dengan menerima data dari request, lalu menerapkannya ke objek level yang dimaksud. Setelah berhasil diperbarui, data level terbaru dikembalikan sebagai response.
 
-8. lakukan percobaan hapus data.
+8. lakukan percobaan hapus data. <br>
 ![img](img/P4_5.png)<br>
     > Penjelasan: Route DELETE /api/levels/{level} digunakan untuk menghapus data level dari database berdasarkan ID yang dikirimkan pada URL. Method destroy() akan menerima objek level tersebut dan langsung menjalankan fungsi delete() untuk menghapusnya. Setelah penghapusan berhasil, sistem akan mengirimkan response JSON yang berisi pesan sukses dan status boolean.
 
