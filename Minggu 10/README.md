@@ -148,4 +148,17 @@ main/public/api/levels dan method POST seperti di bawah ini.
 
 ## Tugas – Implementasi API CRUD untuk Tabel Lain:
 
-Implementasikan CRUD API pada tabel m_user, m_kategori, dan m_barang.
+### Implementasikan CRUD API pada tabel m_user, m_kategori, dan m_barang. (Done)
+
+Link Commit: [Klik Disini](https://github.com/JihaR15/WEBLNJTLARAVEL10/commit/5d1bbe6ea8c3e1c341c9399b6bd93772ea9f5c56) <br>
+
+📌 **File yang diubah/dibuat:**
+- Api/UserController:
+[UserController.php](https://github.com/JihaR15/WEBLNJTLARAVEL10/blob/main/Minggu%2010/PWL_POS/app/Http/Controllers/Api/UserController.php) 
+- Api/KategoriController:
+[KategoriController.php](https://github.com/JihaR15/WEBLNJTLARAVEL10/blob/main/Minggu%2010/PWL_POS/app/Http/Controllers/Api/KategoriController.php) 
+- Api/BarangController:
+[BarangController.php](https://github.com/JihaR15/WEBLNJTLARAVEL10/blob/main/Minggu%2010/PWL_POS/app/Http/Controllers/Api/BarangController.php) 
+- routes/api.php: [api.php](https://github.com/JihaR15/WEBLNJTLARAVEL10/blob/main/Minggu%2010/PWL_POS/routes/api.php)
+
+
