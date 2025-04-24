@@ -38,7 +38,8 @@ Hasil:<br>
 
 ### Berikut jawaban untuk Kalimat yang ditandai merah pada Jobsheet:
 
-10. Uji coba dan screenshot hasilnya apa perbedaan dari yang sebelumnya 
+10. Uji coba dan screenshot hasilnya apa perbedaan dari yang sebelumnya <br>
+![img](img/P1_1.png)
 
 ## Tugas – Implementasi API CRUD untuk Tabel Lain:
 
