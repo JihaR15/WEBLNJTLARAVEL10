@@ -24,13 +24,17 @@ class RegisterController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
+        //simpan gambar
+        $picture = $request->file('picture_path');
+        $picture->store('public/users');
+
         // create user
         $user = UserModel::create([
             'username' => $request->username,
             'nama' => $request->nama,
             'password' => $request->password,
             'level_id' => $request->level_id,
-            'picture_path' => $request->picture_path->hashName(),
+            'picture_path' => $picture->hashName(),
         ]);
 
         // return response JSON user is created

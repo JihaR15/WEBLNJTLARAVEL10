@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Casts\Attribute; 
 use Illuminate\Foundation\Auth\User as Authenticatable; // implementasi class Authenticatable
 
 class UserModel extends Authenticatable implements JWTSubject
@@ -47,5 +48,10 @@ class UserModel extends Authenticatable implements JWTSubject
         return[];
     }
 
-    
+    protected function picturePath(): Attribute 
+    { 
+        return Attribute::make( 
+            get: fn ($value) => url('/storage/users/' . $value), 
+        ); 
+    }
 }
